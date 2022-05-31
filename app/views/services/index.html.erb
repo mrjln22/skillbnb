@@ -1,0 +1,6 @@
+<h1> Services </h1>
+<div class='cards'>
+  <% @services.each do |s| %>
+    <div class='card'><%= link_to s.name, service_path(s), class:'link' %></div>
+    <% end %>
+</div>
