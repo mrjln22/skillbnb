@@ -1,0 +1,13 @@
+<h1> Create a new service </h1>
+<%= form_for @service do |f| %>
+  <%= f.label :skill_name %>
+  <%= f.text_field :skill_name, placeholder: "What is your skill" %>
+
+  <%= f.label :price_per_hour %>
+  <%= f.text_field :price_per_hour, placeholder: "How much per hour?" %>
+
+  <%= f.label :availablity %>
+  <%= f.text_field :availability, placeholder: "yes or no" %>
+
+  <%= f.submit %>
+<% end %>
