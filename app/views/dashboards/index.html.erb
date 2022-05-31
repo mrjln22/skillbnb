@@ -4,7 +4,7 @@
       <div class= "bookings">
         <%= b.service.skill_name %>
           <%= simple_form_for b do |f| %>
-            <%= f.input :status, collection:['pending','done'] %>
+            <%= f.input :status, collection:['pending','confirmed', 'cancelled'] %>
             <%= f.button :submit %>
           <% end %>
       </div>
