@@ -15,6 +15,14 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to booking_path
   end
+  
+  def new
+    @booking = Booking.new
+  end
+
+  def index
+    @bookings = Booking.all
+  end
 
   private
 
