@@ -1,0 +1,8 @@
+<h1> Services </h1>
+<div class='cards'>
+  <% @services.each do |s| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpaperaccess.com/full/1078877.jpg)">
+      <%= link_to s.skill_name, service_path(s), class:'link' %>
+    </div>
+    <% end %>
+</div>
