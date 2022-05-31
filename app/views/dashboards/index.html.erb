@@ -1,0 +1,12 @@
+<h1> Bookings </h1>
+  <div>
+    <% @bookings.each do |b| %>
+      <div class= "bookings">
+        <%= b.service.skill_name %>
+          <%= simple_form_for b do |f| %>
+            <%= f.input :status, collection:['pending','done'] %>
+            <%= f.button :submit %>
+          <% end %>
+      </div>
+    <% end %>
+  </div>
