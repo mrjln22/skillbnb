@@ -4,6 +4,15 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def create
+    @booking = Booking.new
+    @booking.user = current_user
+    @booking.service = Service.find(params[:service_id])
+    @booking.status = "pending"
+    @booking.save
+    redirect_to services_path
+  end
+
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
@@ -15,7 +24,7 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to booking_path
   end
-  
+
   def new
     @booking = Booking.new
   end
@@ -27,6 +36,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status)
+    params.require(:booking).permit(:status, :service_id)
   end
 end

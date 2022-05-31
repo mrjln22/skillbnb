@@ -8,6 +8,8 @@ class ServicesController < ApplicationController
   end
 
   def show
+    @service = Service.find(params[:id])
+    @booking = Booking.new
   end
 
   def create
