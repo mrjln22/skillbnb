@@ -9,7 +9,6 @@
       <div class="search">
         <input type="search" id="form1" class="form-control" />
         <button type="button" class="btn btn-dark">Search!!</button>
-        </button>
       </div>
     </div>
   </div>
@@ -20,7 +19,11 @@
 <div class="container">
   <div class='cards'>
     <% @services.each do |s| %>
+      <% if s.photo.attached? %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path s.photo.key, height: 300, crop: :fill %>')">
+      <% else %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpaperaccess.com/full/1078877.jpg)">
+      <% end  %>
         <%= link_to s.skill_name, service_path(s), class:'link' %>
       </div>
     <% end %>
