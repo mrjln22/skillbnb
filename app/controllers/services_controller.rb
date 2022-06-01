@@ -1,6 +1,12 @@
 class ServicesController < ApplicationController
   def index
     @services = Service.all
+    if params [:search].blank?
+      redirect_to services_path
+    else
+      @input_searchbar = params [:search].downcase
+      @results = Services.all.where("LIKE :search, search:", "%{@input_searchbar}%")
+    end
   end
 
   def new
@@ -20,6 +26,15 @@ class ServicesController < ApplicationController
       redirect_to dashboard_path
     else
       render :new
+    end
+  end
+
+  def search
+    if params [:search].blank?
+      redirect_to services_path
+    else
+      @input_searchbar = params [:search].downcase
+      @results = Services.all.where("LIKE :search, search:", "%{@input_searchbar}%")
     end
   end
 
