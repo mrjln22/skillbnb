@@ -14,10 +14,17 @@
 
   <body>
 
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
-    <%= render "shared/navbar"  %>
-    <%= yield %>
+
+  <div style='display: none;'>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+
+   <div class= "page-container">
+      <div class="navbar-container"><%= render "shared/navbar" %></div>
+      <div class="content-container"><%= yield %></div>
+      <div class="footer-container"><%= render "shared/footer" %></div>
+   </div>
   </body>
-  <footer> <%= render "/shared/footer" %> </footer>
+
 </html>
