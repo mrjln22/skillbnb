@@ -4,10 +4,11 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   Character.create(name: 'Luke', movie: movies.first))
 
 puts "deleting all users"
-
+Booking.destroy_all
+Service.destroy_all
 User.destroy_all
 
 User.create!(email: "george@gmail.com", password: "123456", first_name: "George", last_name: "Woods", role: "teacher")
@@ -20,7 +21,7 @@ puts "creating all users again"
 
 puts "deleting all services"
 
-Service.destroy_all
+
 
 Service.create!(skill_name: "Guitar lessons", price_per_hour: 75, availability: true, user: User.last)
 Service.create!(skill_name: "Football skills", price_per_hour: 150, availability: true, user: User.last)
@@ -35,7 +36,7 @@ puts "creating services again"
 
 puts "deleting all bookings"
 
-Booking.destroy_all
+
 
 Booking.create!(status: "pending", user: User.last, service: Service.last)
 Booking.create!(status: "confirmed", user: User.last, service: Service.last)
