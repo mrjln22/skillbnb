@@ -9,9 +9,6 @@
     <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
-     <%= f.input :first_name %>
-     <%= f.input :last_name %>
-     <%= f.input :role, collection: ["student", "teacher"] %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 

@@ -16,12 +16,17 @@
             <a class="nav-link" href="#">Messages</a>
           </li>
           <li class="nav-item">
+            <% if current_user && current_user.role == "teacher" %>
+              <a class="nav-link" href="/services/new">Create Service</a>
+            <%end%>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/users/sign_up">Sign in</a>
           </li>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <% if current_user && current_user.role == "teacher"  %>
+              <% if current_user && current_user.role == "teacher" %>
                 <a class="dropdown-item" href="/dashboard">Dashboard</a>
               <%end%>
               <a class="dropdown-item" href="#">Another action</a>
