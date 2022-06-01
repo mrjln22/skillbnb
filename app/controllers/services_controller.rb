@@ -14,8 +14,9 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
+    @service.user = current_user
     if @service.save
-      redirect_to service_path(@service)
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -30,6 +31,6 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:skill_name, :price_per_hour, :availability)
+    params.require(:service).permit(:skill_name, :price_per_hour, :availability, :photo)
   end
 end
