@@ -1,4 +1,23 @@
+<div class= main-container>
 <h1> Services </h1>
+
+<div class="searchbar">
+  <div class="input-group">
+
+    <div class="form-outline">
+      <label class="form-label" for="form1">Search for skill</label>
+      <div class="search">
+        <input type="search" id="form1" class="form-control" />
+        <button type="button" class="btn btn-dark">Dark</button>
+
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
 <div class="container">
   <div class='cards'>
     <% @services.each do |s| %>
@@ -7,4 +26,5 @@
       </div>
     <% end %>
    </div>
+</div>
 </div>
