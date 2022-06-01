@@ -22,11 +22,14 @@ puts "deleting all services"
 
 Service.destroy_all
 
-Service.create!(skill_name: "Underwater basket weaving", price_per_hour: 75, availability: true, user: User.last)
-Service.create!(skill_name: "Gardening tips", price_per_hour: 150, availability: true, user: User.last)
+Service.create!(skill_name: "Guitar lessons", price_per_hour: 75, availability: true, user: User.last)
+Service.create!(skill_name: "Football skills", price_per_hour: 150, availability: true, user: User.last)
 Service.create!(skill_name: "Esperanto classes", price_per_hour: 20, availability: true, user: User.last)
 Service.create!(skill_name: "Pogo stick for advanced learners", price_per_hour: 400, availability: true, user: User.last)
 Service.create!(skill_name: "Korean cooking lessons", price_per_hour: 10, availability: true, user: User.last)
+Service.create!(skill_name: "Wine tasting", price_per_hour: 40, availability: true, user: User.last)
+Service.create!(skill_name: "Horticulture in modern society", price_per_hour: 300, availability: true, user: User.last)
+Service.create!(skill_name: "Clarinet lessons", price_per_hour: 10, availability: true, user: User.last)
 
 puts "creating services again"
 
