@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
   resources :bookings, except: :create
   get "/dashboard", to: "dashboards#index"
+
+  resources :users, only: :index
 end
