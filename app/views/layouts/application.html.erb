@@ -22,6 +22,9 @@
 
    <div class= "page-container">
       <div class="navbar-container"><%= render "shared/navbar" %></div>
+      <% if params[:controller] == "pages" %>
+        <%= render "shared/banner" %>
+      <% end %>
       <div class="content-container container">
         <%= yield %>
       </div>
