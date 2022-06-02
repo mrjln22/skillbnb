@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.service = Service.find(params[:service_id])
     @booking.status = "pending"
     @booking.save
-    redirect_to services_path
+    redirect_to service_path(@booking.service), alert: 'Congratulations! You booked a Skill'
   end
 
   def update
