@@ -13,6 +13,7 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
+    @previous_booking = Booking.where(user: current_user, service: @service)
     @booking = Booking.new
     @teacher = User.find(@service.user_id)
   end
