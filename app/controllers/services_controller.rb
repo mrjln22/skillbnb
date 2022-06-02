@@ -6,14 +6,12 @@ class ServicesController < ApplicationController
       @services = Service.all
     end
   end
-  end
 
   def new
     @service = Service.new
   end
 
   def show
-
     @service = Service.find(params[:id])
     @previous_booking = Booking.where(user: current_user, service: @service)
     @booking = Booking.new
@@ -50,3 +48,4 @@ class ServicesController < ApplicationController
   def service_params
     params.require(:service).permit(:skill_name, :price_per_hour, :availability, :photo)
   end
+end
