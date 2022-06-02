@@ -23,6 +23,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/users/sign_up">Sign in</a>
           </li>
+          <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -33,6 +34,11 @@
               <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
+          <%else %>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/sign_up">Sign in</a>
+            </li>
+          <% end %>
           <!--li class="nav-item"-->
           <!--/li-->
       </ul>
