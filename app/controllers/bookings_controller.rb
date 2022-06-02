@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new
+    @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.service = Service.find(params[:service_id])
     @booking.status = "pending"
@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new
+    @booking = Booking.new()
   end
 
   def index
@@ -36,6 +36,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :service_id)
+    params.require(:booking).permit(:status, :service_id, :start_date, :end_date)
   end
 end
