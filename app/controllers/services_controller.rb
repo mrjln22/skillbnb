@@ -1,6 +1,11 @@
 class ServicesController < ApplicationController
   def index
-    @services = Service.all
+    if params[:query].present?
+      @services = Service.search_for_skills(params[:query])
+    else
+      @services = Service.all
+    end
+  end
   end
 
   def new
@@ -23,6 +28,15 @@ class ServicesController < ApplicationController
     end
   end
 
+  def search
+    if params [:search].blank?
+      redirect_to services_path
+    else
+      @input_searchbar = params [:search].downcase
+      @results = Services.all.where("LIKE :search, search:", "%{@input_searchbar}%")
+    end
+  end
+
   def destroy
     @service = Service.find(params[:id])
     @service.destroy
@@ -34,4 +48,3 @@ class ServicesController < ApplicationController
   def service_params
     params.require(:service).permit(:skill_name, :price_per_hour, :availability, :photo)
   end
-end
