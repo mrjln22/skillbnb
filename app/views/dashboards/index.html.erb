@@ -1,4 +1,4 @@
-<h1> Bookings </h1>
+<h1> My Bookings </h1>
   <div>
     <% @bookings.each do |b| %>
       <div class= "bookings">
@@ -9,4 +9,15 @@
           <% end %>
       </div>
     <% end %>
+  </div>
+<h1> My Services</h1>
+  <div>
+    <% @services.each do |s| %>
+      <div>
+        <% if s.photo.attached? %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path s.photo.key, height: 300, crop: :fill %>')">
+        <% else %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpaperaccess.com/full/1078877.jpg)">
+        <% end  %>
+      </div>
   </div>
