@@ -2,17 +2,18 @@
 <h1> Services </h1>
 
 <div class="searchbar">
-  <div class="input-group">
-
-    <div class="form-outline">
-      <label class="form-label" for="form1">Search for skill</label>
-      <div class="search">
-        <input type="search" id="form1" class="form-control" />
-        <button type="button" class="btn btn-dark">Search!!</button>
-      </div>
-    </div>
+  <div class="form">
+    <%= form_tag services_path, method: :get do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a skill",
+            autocomplete: 'off' %>
+        <%= submit_tag "Search", class: "btn btn-dark" %>
+    <% end %>
   </div>
 </div>
+
 <br>
 <br>
 

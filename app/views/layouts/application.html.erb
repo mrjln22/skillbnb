@@ -13,21 +13,19 @@
   </head>
 
   <body>
-
-
-
+  <div>
+    <%# <p class="notice"><%= notice</p> %>
+    <% unless alert.nil? %>
+      <p class="alert alert-dark"><%= alert %></p>
+    <% end %>
+   </div>
 
    <div class= "page-container">
       <div class="navbar-container"><%= render "shared/navbar" %></div>
       <div class="content-container">
         <%= yield %>
-        <div>
-          <%# <p class="notice"><%= notice</p> %>
-          <% unless alert.nil? %>
-            <p class="alert alert-dark"><%= alert %></p>
-          <% end %>
-        </div>
       </div>
+      <div class="content-container container"><%= yield %></div>
       <div class="footer-container"><%= render "shared/footer" %></div>
    </div>
   </body>
