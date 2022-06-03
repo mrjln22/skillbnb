@@ -5,7 +5,7 @@
  <ul class="list-group list-group">
   <% @services.each do |service| %>
     <div class="bookings">
-    <li class="list-group-item"><i class="fas fa-palette"></i><br>
+    <li class="list-group-item"><%= image_tag ("S_logo.jpeg"), class: "img_small"%> <br>
     <strong>Lesson: </strong><%= service.skill_name %>
     </div>
   <% end %>
@@ -21,7 +21,7 @@
  <ul class="list-group list-group">
   <% @bookings.each do |b| %>
     <div class="bookings">
-    <li class="list-group-item"><i class="fas fa-palette"></i><br>
+    <li class="list-group-item"><%= image_tag ("S_logo.jpeg"), class: "img_small"%><br>
       <strong>Lesson: </strong><%= b.service.skill_name %>
         <%= simple_form_for b do |f| %>
          <%= f.input :status, label: 'Status:', collection:['pending','confirmed', 'cancelled'] %>
@@ -42,7 +42,7 @@
   <ul class="list-group list-group">
   <% @student_booking.each do |b| %>
     <div class="bookings">
-      <li class="list-group-item"><i class="fas fa-palette"></i><br> <strong>Lesson:</strong> <%= b.service.skill_name %><br> <strong>Status:</strong> <%= b.status %></li>
+      <li class="list-group-item"><%= image_tag ("S_logo.jpeg"), class: "img_small"%><br> <strong>Lesson:</strong> <%= b.service.skill_name %><br> <strong>Status:</strong> <%= b.status %></li>
       <br>
     </div>
   <% end %>
