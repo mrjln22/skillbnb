@@ -27,7 +27,7 @@
               <% if current_user %>
                 <a class="dropdown-item" href="/dashboard">Dashboard</a>
               <%end%>
-              <a class="dropdown-item" href="#">Another action</a>
+
               <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
