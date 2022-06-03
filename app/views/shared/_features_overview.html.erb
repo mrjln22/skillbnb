@@ -1,36 +1,25 @@
 <div class="container">
 `	<section class="features-overview" id="features-section" style="text-align:  center;">
     <div class="content-header">
-      <h2>How does it works</h2>
+      <h2>Hot right now 🔥 </h2>
       <h6 class="section-subtitle text-muted">One theme that serves as an easy-to-use operational toolkit<br>that meets customer's needs.</h6>
     </div>
-    <div class="d-md-flex justify-content-between">
-      <div class="grid-margin d-flex justify-content-start">
-        <div class="features-width">
-          <%= image_tag ("Group12.svg") %>
-          <%# <img src="images/Group12.svg" alt="" class="img-icons"> %>
-          <h5 class="py-3">Speed<br>Optimisation</h5>
-          <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
-          <a href="#"><p class="btn btn btn-dark">Readmore</p></a>
+    <div class="d-flex justify-content-between">
+      <% @services.each do |s| %>
+        <div class="d-md-flex justify-content-between">
+          <div class="grid-margin d-flex justify-content-start">
+            <div class="features-width">
+              <div class="">
+                <%= cl_image_tag s.photo.key , class: "home-img"%>
+              <%# <img src="images/Group12.svg" alt="" class="img-icons"> %>
+                <h5 class="py-3"><%= s.skill_name %></h5>
+                <div class="home-service-description"><p class="text-muted"><%= s.description %></p></div>
+                <%= link_to "See More", s, class: "btn btn-dark" %>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="grid-margin d-flex justify-content-center">
-        <div class="features-width">
-          <%= image_tag ("Group7.svg") %>
-          <h5 class="py-3">SEO and<br>Backlinks</h5>
-          <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
-          <a href="#"><p class="btn btn btn-dark">Readmore</p></a>
-        </div>
-      </div>
-      <div class="grid-margin d-flex justify-content-end">
-        <div class="features-width">
-          <%= image_tag ("Group5.svg") %>
-          <%# <img src="images/Group5.svg" alt="" class="img-icons"> %>
-          <h5 class="py-3">Content<br>Marketing</h5>
-          <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
-          <a href="#"><p class="btn btn btn-dark">Readmore</p></a>
-        </div>
-      </div>
+      <% end %>
     </div>
   </section>
 </div>
