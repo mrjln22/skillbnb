@@ -21,3 +21,8 @@ label {
   max-width: 30px;
   max-height: 30px;
 }
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}

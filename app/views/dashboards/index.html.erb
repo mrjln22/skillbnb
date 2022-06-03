@@ -6,7 +6,14 @@
     <% @services.each do |service| %>
       <div class="bookings">
       <li class="list-group-item"><%= image_tag ("S_logo.jpeg"), class: "img_small"%> <br>
-      <strong>Lesson: </strong><%= service.skill_name %>
+      <strong>Lesson: </strong><%="#{service.skill_name} - ($#{service.price_per_hour} per hour)"  %>
+      <%= link_to service_path(service), method: :delete do %>
+        <i class="fas fa-trash"></i>
+      <% end %>
+      <%= link_to edit_service_path(service) do %>
+      <i class="fas fa-edit"></i>
+      <% end %>
+      </li>
       </div>
     <% end %>
   </div>
