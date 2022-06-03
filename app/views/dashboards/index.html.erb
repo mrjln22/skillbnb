@@ -1,35 +1,49 @@
+
 <% if current_user.role == "teacher"  %>
-<h1> My Services</h1>
+<h1> My services</h1>
 <div>
-  <% @services.each do |s| %>
-    <div>
-      <% if s.photo.attached? %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path s.photo.key, height: 300, crop: :fill %>')">
-      <% else %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpaperaccess.com/full/1078877.jpg)">
-      <% end  %>
+ <ul class="list-group list-group">
+  <% @services.each do |service| %>
+    <div class="bookings">
+    <li class="list-group-item"><i class="fas fa-palette"></i><br>
+    <strong>Lesson: </strong><%= service.skill_name %>
     </div>
   <% end %>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+
 <h1> My booked services</h1>
 <div>
+ <ul class="list-group list-group">
   <% @bookings.each do |b| %>
-    <div class= "bookings">
-      <%= b.service.skill_name %>
+    <div class="bookings">
+    <li class="list-group-item"><i class="fas fa-palette"></i><br>
+      <strong>Lesson: </strong><%= b.service.skill_name %>
         <%= simple_form_for b do |f| %>
-          <%= f.input :status, collection:['pending','confirmed', 'cancelled'] %>
-          <%= f.button :submit %>
-        <% end %>
+         <%= f.input :status, label: 'Status:', collection:['pending','confirmed', 'cancelled'] %>
+           <%= f.button :submit, "Submit", class: "btn btn-dark"%>
+          <% end %>
     </div>
   <% end %>
 </div>
 <% end %>
-<h1> My Bookings as student </h1>
+<br>
+<br>
+<br>
+<br>
+
+
+<h1> My bookings </h1>
 <div>
+  <ul class="list-group list-group">
   <% @student_booking.each do |b| %>
-    <div class= "bookings">
-      <%= b.service.skill_name %><%= b.status %>
+    <div class="bookings">
+      <li class="list-group-item"><i class="fas fa-palette"></i><br> <strong>Lesson:</strong> <%= b.service.skill_name %><br> <strong>Status:</strong> <%= b.status %></li>
+      <br>
     </div>
   <% end %>
 </div>
