@@ -41,7 +41,19 @@ class ServicesController < ApplicationController
   def destroy
     @service = Service.find(params[:id])
     @service.destroy
-    redirect_to services_path
+    redirect_to dashboard_path
+  end
+
+  def edit
+    @service = Service.find(params[:id])
+  end
+
+  def update
+    @service = Service.find(params[:id])
+    @service.update(service_params)
+
+    # no need for app/views/restaurants/update.html.erb
+    redirect_to dashboard_path(@restaurant)
   end
 
   private
