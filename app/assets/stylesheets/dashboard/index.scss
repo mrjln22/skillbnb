@@ -9,7 +9,8 @@ h1 {
 
 .list-group-item {
   margin-top: 10px;
-  box-shadow: 5px 10px black;
+  // box-shadow: 5px 10px black;
+
 }
 label {
   font-weight: bold;
@@ -25,4 +26,22 @@ label {
 a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: inherit;
+}
+
+#booking_status {
+  border-radius: 50px;
+}
+
+.bookings {
+  border-radius: 50px;
+}
+
+.fas.fa-trash {
+  color: red;
+  float: right;
+}
+
+.fas.fa-edit {
+  color: blue;
+  float: right;
 }
