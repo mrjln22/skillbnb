@@ -39,15 +39,15 @@ service_four = Service.new(skill_name: "Archery for advanced learners", price_pe
 file_four = URI.open('https://images.unsplash.com/photo-1510925758641-869d353cecc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')
 service_four.photo.attach(io: file_four, filename: 'nes.png', content_type: 'image/png')
 service_four.save
-service_five = Service.new(skill_name: "Korean cooking lessons", price_per_hour: 10, availability: true, user: User.last, description: "spicy and delicious!")
+service_five = Service.new(skill_name: "Korean cooking lessons", price_per_hour: 10, availability: true, user: User.last, description: "Spicy and delicious!")
 file_five = URI.open('https://images.unsplash.com/photo-1584278858536-52532423b9ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
 service_five.photo.attach(io: file_five, filename: 'nes.png', content_type: 'image/png')
 service_five.save
-service_six = Service.new(skill_name: "Wine tasting", price_per_hour: 40, availability: true, user: User.last, description: "come and learn about wine, or just get sozzled")
+service_six = Service.new(skill_name: "Wine tasting", price_per_hour: 40, availability: true, user: User.last, description: "Come and learn about wine, or just get sozzled")
 file_six = URI.open('https://images.unsplash.com/photo-1598306442928-4d90f32c6866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80')
 service_six.photo.attach(io: file_six, filename: 'nes.png', content_type: 'image/png')
 service_six.save
-service_seven = Service.new(skill_name: "Horticulture in modern society", price_per_hour: 300, availability: true, user: User.last, description: "learn how to garden like a gangstarrr")
+service_seven = Service.new(skill_name: "Horticulture in modern society", price_per_hour: 300, availability: true, user: User.last, description: "Learn how to garden like a gangstarrr")
 file_seven = URI.open('https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
 service_seven.photo.attach(io: file_seven, filename: 'nes.png', content_type: 'image/png')
 service_seven.save
